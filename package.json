@@ -1,0 +1,25 @@
+{
+  "name": "cucumber_framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test",
+    "posttest": "npx ts-node fil src/test/utils/report.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.0.0",
+    "@playwright/test": "^1.47.1",
+    "@types/node": "^22.5.4",
+    "fs-extra": "^11.2.0",
+    "multiple-cucumber-html-reporter": "^3.7.0",
+    "ts-node": "github:TypeStrong/ts-node#master"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node-fetch": "^3.3.2"
+  }
+}

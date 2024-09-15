@@ -1,0 +1,84 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validation-in-a-table-of-results;a-reporter-wants-to-report-on-the-top-3-of-2023-las-vegas-grand-prix-results",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "A reporter wants to report on the top 3 of 2023 Las Vegas Grand Prix results",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "User navigates to the valid url",
+            "match": {
+              "location": "src/test/steps/2023LasVegasGPSteps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 652135540
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "A user navigates to Formular1 Results",
+            "match": {
+              "location": "src/test/steps/2023LasVegasGPSteps.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 83374749
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "User selects the year 2023",
+            "match": {
+              "location": "src/test/steps/2023LasVegasGPSteps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1297930082
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "User checks the Las Vegas Grand Prix",
+            "match": {
+              "location": "src/test/steps/2023LasVegasGPSteps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3875217958
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 178167
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "validation-in-a-table-of-results",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validation In A Table Of Results",
+    "tags": [],
+    "uri": "src/test/features/lasVegasGP.feature"
+  }
+]
