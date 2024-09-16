@@ -1,3 +1,4 @@
+import { expect } from "@playwright/test";
 import { pageFixture } from "../test/utils/pageFixture";
 
 
@@ -61,5 +62,7 @@ export default class LasVegasGPResultsPage {
                 }
             }
         }
+
+        await expect(await vagasHeader).toContain('2023 Las Vegas Grand Prix');
     }
 }
