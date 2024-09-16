@@ -27,7 +27,7 @@ jobs:
         run: npx playwright install --with-deps
       - name: Install ts-node
         run: npm i ts-node -D
-      - name: Install mupli-reports
+      - name: Install multi-reports
         run: npm install multiple-cucumber-html-reporter --save-dev  
       - name: run cucumber
         run: npm run test
