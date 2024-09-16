@@ -17,8 +17,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - name: Install dependencies
-        run: npm ci
       - name: Install Playwright
         run: npm init playwright@latest 
       - name: Install Cucumber
@@ -27,8 +25,6 @@ jobs:
         run: npx playwright install --with-deps
       - name: Install ts-node
         run: npm i ts-node -D
-      - name: Install mupli-reports
-        run: npm install multiple-cucumber-html-reporter --save-dev  
       - name: run cucumber
         run: npm run test
       - uses: actions/upload-artifact@v4
