@@ -1,36 +1,39 @@
-name: Node.js CI
+name: Playwright Tests
 'on':
   push:
     branches:
+      - main
       - master
   pull_request:
     branches:
+      - main
       - master
 jobs:
-  build:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 18.x
     steps:
       - uses: actions/checkout@v4
-      - name: 'Use Node.js ${{ matrix.node-version }}'
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '${{ matrix.node-version }}'
-          cache: npm
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
       - name: Install Playwright
-        run: npm init playwright@latest
+        run: npm init playwright@latest 
       - name: Install Cucumber
         run: npm i @cucumber/cucumber -D
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
       - name: Install ts-node
         run: npm i ts-node -D
+      - name: Install multi-reports
+        run: npm install multiple-cucumber-html-reporter --save-dev  
       - name: run cucumber
-        run: npm test
-      - uses: actions/upload-artifact@v3
-        if: always()
+        run: npm run test
+      - uses: actions/upload-artifact@v4
+        if: '${{ !cancelled() }}'
         with:
-          name: Report
-          path: test-result
-          retention-days: 2
+          name: test-results
+          path: test-results/
+          retention-days: 5
